@@ -9,14 +9,17 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     
     <!-- JavaScript -->
-    <script src="{{ url_for('static', filename='js/scripts.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
 </head>
 <body>
     <header>
         <nav> <!-- General nav bar -->
-            <a href="{{ url_for('home') }}">Home</a> |
-            <a href="{{ url_for('about') }}">About</a> |
-            <a href="{{ url_for('beginner') }}">Beginner</a>
+            <a class="nav_pages" href="{{ url_for('home') }}">Home</a>
+            <a class="nav_pages" href="{{ url_for('about') }}">About</a>
+            <a class="nav_pages" href="{{ url_for('beginner') }}">Beginner</a>
+            <a class="nav_pages" href="{{ url_for('intermediate') }}">Intermediate</a>
+            <a class="nav_pages" href="{{ url_for('advanced') }}">Advanced</a>
+            <button id= "login" class="nav_pages">Login</button>
         </nav>
     </header>
 
@@ -28,6 +31,7 @@
 
     <footer>
         {% block footer %}{% endblock %}
+        <p>Made by <a href="https://github.com/ngoc2383">Ngoc M</a></p>
     </footer>
 </body>
 </html>
