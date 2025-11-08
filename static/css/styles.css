@@ -14,20 +14,85 @@
 
 body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin: 0;
+    
+}
+
+body::-webkit-scrollbar {
+    scrollbar-width: none;
 }
 
 h1 {
     font-size: large;
 }
+
 button {
     font-size: x-large;
     font-family: inherit;
-    background-color: orangered;
+    background-color: white;
     border: 0 ;
     border-radius: var(--border-round);
+}
+
+button:hover {
+    transform: translate(-3px, 3px);
+    transition: 0.1s ease;
 }
 
 .nav_pages {
     text-decoration: none;
     border-radius: var(--border-round);
+    padding: 20px;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 100;
+    text-align: center;
+}
+
+.pfp {
+    border-radius: 100%;
+}
+
+section {
+    margin: 0;
+    padding: 10px;
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+
+}
+
+.about-sections {
+    flex-direction: column; /* Switch to horizontal align*/
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.home-sections {
+    justify-content: center; /* horizontal */
+    align-items: center; /* verticle */
+}
+
+#pfp {
+    width: 200px;
+    height: auto;
+    border-radius: 100%;
+}
+
+footer {
+    position: sticky;
+    bottom: 0;
+    background-color: white;
+    z-index: 100;
+
+    text-align: center;
+    text-decoration: none;
 }

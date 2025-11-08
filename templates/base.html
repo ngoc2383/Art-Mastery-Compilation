@@ -12,16 +12,13 @@
     <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
 </head>
 <body>
-    <header>
-        <nav> <!-- General nav bar -->
-            <a class="nav_pages" href="{{ url_for('home') }}">Home</a>
-            <a class="nav_pages" href="{{ url_for('about') }}">About</a>
-            <a class="nav_pages" href="{{ url_for('beginner') }}">Beginner</a>
-            <a class="nav_pages" href="{{ url_for('intermediate') }}">Intermediate</a>
-            <a class="nav_pages" href="{{ url_for('advanced') }}">Advanced</a>
-            <button id= "login" class="nav_pages">Login</button>
-        </nav>
-    </header>
+    <nav> <!-- General nav bar -->
+        <a class="nav_pages" href="{{ url_for('home') }}">Home</a>
+        <a class="nav_pages" href="{{ url_for('about') }}">About</a>
+        <a class="nav_pages" href="{{ url_for('beginner') }}">Beginner</a>
+        <a class="nav_pages" href="{{ url_for('intermediate') }}">Intermediate</a>
+        <a class="nav_pages" href="{{ url_for('advanced') }}">Advanced</a>
+    </nav>
 
     <main>
         {% block content %}

@@ -3,8 +3,29 @@
 {% block title %}Home | Art Mastery{% endblock %}
 
 {% block content %}
+
+<section class="home-sections" style="background:#f8b400">
 <h1>START HERE</h1>
-<p></p>
+
+</section>
+<section class="home-sections login-section" style="background:#4a90e2">
+    <button id= "login" class="nav_pages">Login</button>
+    <button id= "register" class="nav_pages">Register</button>
+
+    <!-- Login Action -->
+    <div class="login-page" loading="lazy">
+        <form action="/login" method="post">
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Username">
+            <label for="password"></label>
+            <input type="text" id="password" placeholder="Password">
+            <button id="signin">Signin</button>
+        </form>
+    </div>
+</section>
+<section class="home-sections" style="background:#7ed321">
+<h1>Hello</h1>
+</section>
 {% endblock %}
 
 {% block footer %}

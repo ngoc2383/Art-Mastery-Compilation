@@ -16,16 +16,21 @@ def create_user_table():
     conn.commit()
     conn.close()
 
-def create_progress_table():
-    c.execute('''
-        CREATE TABLE IF NOT EXIST user_progress (
-            progress_id INTERGER PRIMARY KEY AUTOINCREMENT,
-            completed BOOLEAN,
-            lesson_id INTERGER,
-            user_id INTERGER,
-            FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE,
-            FOREIGN KEY (lesson_id) REFERENCES lessons(lesson_id) ON DELETE CASCADE
-        )
+def create_watched_table():
+    c.executescript('''
+        CREATE TABLE IF NOT EXIST videos_watched (
+            id TEXT PRIMARY KEY,
+            level TEXT NOT NULL,     
+            title TEXT NOT NULL,
+            url TEXT NOT NULL
+        );
+
+        INSERT INTO videos (id, level, title, creator, url) VALUES
+            ('b1', 'Beginner', 'Learning to Draw Digitally for Beginners', 'https://www.youtube.com/watch?v=WLU26nqcvfY'),
+            ('b2', 'Beginner', 'START HERE with Digital Art | Step by step Tutorial', 'https://www.youtube.com/watch?v=noNbuBqvxQE'),
+            ('i1', 'Intermediate', 'How to Learn MORE Digital Painting', 'https://www.youtube.com/watch?v=9QEGEBK6nIY'),
+            ('a1', 'Advanced', 'Mind-Bending Art Techniques in Procreate #1', 'https://www.youtube.com/watch?v=GS06AtdlzvY');
+
     ''')
 
 def new_user(username, email, password):
