@@ -14,7 +14,6 @@
 
 body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    overflow-x: hidden;
     overflow-y: auto;
     margin: 0;
     
@@ -41,11 +40,17 @@ button:hover {
     transition: 0.1s ease;
 }
 
-.nav_pages {
+a {
     text-decoration: none;
+    color: #000;
+}
+
+
+.nav_pages {
     border-radius: var(--border-round);
     padding: 20px;
 }
+
 
 nav {
     position: sticky;
@@ -61,9 +66,10 @@ nav {
 
 section {
     margin: 0;
-    padding: 10px;
-    width: 100vw;
-    height: 100vh;
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px;
 
     display: flex;
 
@@ -77,14 +83,46 @@ section {
 }
 
 .home-sections {
-    justify-content: center; /* horizontal */
+    /*
+    justify-content: center; /* horizontal
     align-items: center; /* verticle */
+    border-width: 2px;
 }
 
 #pfp {
+    position: absolute; /* relative to the nearest relative parent */
+    top: 20px; /* distance from top of selection */
+    right: 20px; /* distance from right of section */
     width: 200px;
     height: auto;
     border-radius: 100%;
+}
+
+#authorization {
+    width: 200px;
+    height: 500px;
+    overflow-y: auto;
+    position: absolute;
+    /*overflow-x: hidden;*/
+
+    transform:rotate(-90deg) translateY(-100px);
+    transform-origin: right top;
+
+    background-color: green;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    justify-items: center;
+}
+
+#login-page, #register-page {
+    width: fit-content;
+    height: auto;
+
+    transform:rotate(90deg);
+    transform-origin: right top;
+
+    background-color: aqua;
 }
 
 footer {
@@ -95,4 +133,17 @@ footer {
 
     text-align: center;
     text-decoration: none;
+} 
+
+#scroll3D {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+#scroll3D canvas {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: block;
 }

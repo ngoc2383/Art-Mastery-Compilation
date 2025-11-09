@@ -9,6 +9,7 @@ def init_db():
     db.create_progress_table()
     db.new_user("ngoc2383", "host1234@gmail.com", "ngoc1102")
     print("created table successfully!")
+    
 
 @app.route('/')
 def home():

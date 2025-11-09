@@ -1,0 +1,11 @@
+Model Information:
+* title:	scroll
+* source:	https://sketchfab.com/3d-models/scroll-31f6ad01803b4099bdd24b95e1a57bdc
+* author:	malle87 (https://sketchfab.com/malle87)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "scroll" (https://sketchfab.com/3d-models/scroll-31f6ad01803b4099bdd24b95e1a57bdc) by malle87 (https://sketchfab.com/malle87) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -5,23 +5,41 @@
 {% block content %}
 
 <section class="home-sections" style="background:#f8b400">
-<h1>START HERE</h1>
-
+    <h1>START HERE</h1>
+    <div id="scroll3D"></div>
 </section>
 <section class="home-sections login-section" style="background:#4a90e2">
     <button id= "login" class="nav_pages">Login</button>
     <button id= "register" class="nav_pages">Register</button>
 
-    <!-- Login Action -->
-    <div class="login-page" loading="lazy">
-        <form action="/login" method="post">
-            <label for="username">Username</label>
-            <input type="text" id="username" placeholder="Username">
-            <label for="password"></label>
-            <input type="text" id="password" placeholder="Password">
-            <button id="signin">Signin</button>
-        </form>
+    <!-- Login Part -->
+    <div id="authorization">
+        <div id="login-page" loading="lazy">
+            <form action="/login" method="post">
+                <h1>Login</h1>
+                <label for="username">Username</label>
+                <input name="username" type="text" class="username" placeholder="Username">
+                <label for="password"></label>
+                <input name="password" type="password" class="password" placeholder="Password">
+                <button type="submit" class="signin">Sign In</button>
+                <p>Already have an account? <a href="#" id="showRegister">Login</a></p>
+            </form>
+        </div>
+
+        <!-- Register Part -->
+        <div id="register-page" loading="lazy">
+            <form action="/login" method="post">
+                <h1>Login</h1>
+                <label for="username">Username</label>
+                <input name="username" type="text" class="username" placeholder="Username">
+                <label for="password"></label>
+                <input name="password" type="password" class="password" placeholder="Password">
+                <button type="submit" class="signin">Sign In</button>
+                <p>Already have an account? <a href="#" id="showLogin">Login</a></p>
+            </form>
+        </div>
     </div>
+
 </section>
 <section class="home-sections" style="background:#7ed321">
 <h1>Hello</h1>
