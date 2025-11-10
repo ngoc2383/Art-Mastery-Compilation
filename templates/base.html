@@ -24,12 +24,19 @@
 
 </head>
 <body>
-    <nav> <!-- General nav bar -->
+    <div class="off-screen-menu">
         <a class="nav_pages" href="{{ url_for('home') }}">Home</a>
         <a class="nav_pages" href="{{ url_for('about') }}">About</a>
         <a class="nav_pages" href="{{ url_for('beginner') }}">Beginner</a>
         <a class="nav_pages" href="{{ url_for('intermediate') }}">Intermediate</a>
         <a class="nav_pages" href="{{ url_for('advanced') }}">Advanced</a>
+    </div>
+    <nav>
+        <div class="ham-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </nav>
 
     <main>
@@ -40,7 +47,7 @@
 
     <footer>
         {% block footer %}{% endblock %}
-        <p>Made by <a href="https://github.com/ngoc2383">Ngoc M</a></p>
+        <p class="madeby">Made by <a href="https://github.com/ngoc2383">Ngoc M</a></p>
     </footer>
 </body>
 </html>

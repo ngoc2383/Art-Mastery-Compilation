@@ -5,15 +5,23 @@
 {% block content %}
 
 <section class="home-sections" style="background:#f8b400">
-    <h1>START HERE</h1>
+    <div class="welcome">
+        <h1>Welcome Traveller!</h1>
+        <p><span class="typed-out">Are you perhaps looking to master the art of digital illustration?</span></p>
+        <span class="welcome-buttons">
+            <button class="welcome-button" id="yes-index" loading="lazy">YES!</button>
+            <button class="welcome-button" id="no-index" loading="lazy">NO</button>
+        </span>
+    </div>
     <div id="scroll3D"></div>
 </section>
 <section class="home-sections login-section" style="background:#4a90e2">
-    <button id= "login" class="nav_pages">Login</button>
-    <button id= "register" class="nav_pages">Register</button>
-
-    <!-- Login Part -->
+    <span>
+        <button id= "login" class="authorization-button">Login</button>
+        <button id= "register" class="authorization-button">Register</button>
+    </span>
     <div id="authorization">
+        <!-- Login Part -->
         <div id="login-page" loading="lazy">
             <form action="/login" method="post">
                 <h1>Login</h1>
@@ -22,20 +30,20 @@
                 <label for="password"></label>
                 <input name="password" type="password" class="password" placeholder="Password">
                 <button type="submit" class="signin">Sign In</button>
-                <p>Already have an account? <a href="#" id="showRegister">Login</a></p>
+                <p>Doesn't have an account? <a href="#" id="showRegister" class="authorization-button">Register</a></p>
             </form>
         </div>
 
         <!-- Register Part -->
         <div id="register-page" loading="lazy">
             <form action="/login" method="post">
-                <h1>Login</h1>
+                <h1>Register</h1>
                 <label for="username">Username</label>
                 <input name="username" type="text" class="username" placeholder="Username">
                 <label for="password"></label>
                 <input name="password" type="password" class="password" placeholder="Password">
                 <button type="submit" class="signin">Sign In</button>
-                <p>Already have an account? <a href="#" id="showLogin">Login</a></p>
+                <p>Already have an account? <a href="#" id="showLogin" class="authorization-button">Login</a></p>
             </form>
         </div>
     </div>
@@ -48,3 +56,4 @@
 
 {% block footer %}
 {% endblock %}
+

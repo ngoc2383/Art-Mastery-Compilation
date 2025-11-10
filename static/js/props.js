@@ -10,7 +10,7 @@ const height = container.clientHeight;
 // 3D space
 const scene = new THREE.Scene(); 
 // camera with positions and angles POV
-const camera = new THREE.PerspectiveCamera(75, width/height, 0.1, 1000);
+const camera = new THREE.PerspectiveCamera(50, width/height, 0.1, 1000);
 camera.position.z = 1; //set how far cam from the obj
 
 // a new renderer and set its size
@@ -20,6 +20,10 @@ container.appendChild(renderer.domElement);
 
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
+controls.enableZoom = false;
+controls.enablePan = false;
+controls.minPolarAngle = Math.PI / 2;
+controls.maxPolarAngle = Math.PI / 2;
 
 let obj;
 let objToRender = "scroll";
@@ -42,10 +46,15 @@ loader.load(
 
 
 // add lightings
-const topLight = new THREE.DirectionalLight(0xffffff, 1); // color, intensity
-topLight.position.set(500, 500, 500); // top-left ish
-topLight.castShadow = true;
-scene.add(topLight);
+const leftLight = new THREE.DirectionalLight(0x003B2C, 1.5); // color, intensity
+leftLight.position.set(500, 500, -500); // top-left ish
+leftLight.castShadow = true;
+scene.add(leftLight);
+
+const rightLight = new THREE.DirectionalLight(0xFFFFFF, 1); // color, intensity
+rightLight.position.set(-200, -100, 500); // top-right ish
+rightLight.castShadow = true;
+scene.add(rightLight);
 
 const ambientLight = new THREE.AmbientLight(0x333333, 5);
 scene.add(ambientLight);
@@ -58,7 +67,7 @@ function animate() {
     renderer.render(scene, camera);
 }
 
-window.addEventListener("resize", function() {
+window.addEventListener("resize", e => {
     const width = container.clientWidth;
     const height = container.clientHeight;
     camera.aspect = width/height;
